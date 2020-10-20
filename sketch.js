@@ -1,11 +1,12 @@
 const Engine = Matter.Engine;
 const World= Matter.World;
 const Bodies = Matter.Bodies;
+const Constraint=Matter.Constraint;
 
 var engine, world;
 var box1, pig1;
 var backgroundImg,platform;
-
+var log77,rope1;
 function preload() {
     backgroundImg = loadImage("sprites/bg.png");
 }
@@ -36,6 +37,8 @@ function setup(){
 
     bird = new Bird(100,100);
 
+    log77=new Log(240,150,60,PI/2)
+     rope=new Rope(bird.body,log77.body)
 }
 
 function draw(){
@@ -61,4 +64,6 @@ function draw(){
 
     bird.display();
     platform.display();
+    log77.display();
+    rope.display();
 }
